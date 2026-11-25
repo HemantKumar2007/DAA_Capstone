@@ -1,0 +1,54 @@
+
+========== MINI-COURIER PLANNER ==========
+Vehicle capacity: 15
+
+1) PARCEL PRIORITIZATION
+  P04 -> D: priority=5, deadline=1, weight=6, value=100
+  P01 -> A: priority=5, deadline=2, weight=4, value=90
+  P02 -> B: priority=4, deadline=4, weight=5, value=80
+  P06 -> F: priority=4, deadline=5, weight=4, value=70
+  P03 -> C: priority=3, deadline=3, weight=3, value=55
+  P08 -> H: priority=3, deadline=6, weight=5, value=60
+  P05 -> E: priority=2, deadline=7, weight=2, value=30
+  P07 -> G: priority=1, deadline=9, weight=3, value=25
+
+2) OPTIMAL PACKING (0/1 KNAPSACK)
+  Selected: P04 -> D (weight 6, value 100)
+  Selected: P01 -> A (weight 4, value 90)
+  Selected: P03 -> C (weight 3, value 55)
+  Selected: P05 -> E (weight 2, value 30)
+  Total packed weight: 15/15
+  Maximum packing value: 275
+
+3) SHORTEST PATHS FROM DEPOT (DIJKSTRA)
+  Depot -> A: 4.0
+  Depot -> B: 6.0
+  Depot -> C: 7.0
+  Depot -> D: 9.0
+  Depot -> Depot: 0
+  Depot -> E: 10.0
+  Depot -> F: 8.0
+  Depot -> G: 11.0
+  Depot -> H: 10.0
+
+4) DELIVERY TOUR (NEAREST-NEIGHBOR TSP APPROXIMATION)
+  Route: Depot -> A -> C -> D -> E -> Depot
+  Total route distance: 26.0
+
+5) ALGORITHM RUNTIME
+  Sorting: 0.00000597 seconds
+  Knapsack DP: 0.00002971 seconds
+  Dijkstra: 0.00006661 seconds
+  TSP approximation: 0.00013730 seconds
+
+Note: runtime depends on hardware and input size.
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

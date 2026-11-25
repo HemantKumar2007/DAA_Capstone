@@ -1,0 +1,9 @@
+id,destination,priority,deadline,weight,value
+P01,A,5,2,4,90
+P02,B,4,4,5,80
+P03,C,3,3,3,55
+P04,D,5,1,6,100
+P05,E,2,7,2,30
+P06,F,4,5,4,70
+P07,G,1,9,3,25
+P08,H,3,6,5,60
